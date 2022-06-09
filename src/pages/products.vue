@@ -17,7 +17,10 @@
       class="product-item"
       :name="product.name"
       :image="product.image"
+      @click="onClickCartItem(product)"
+      @click:cart-button="onAddCartItem(product)"
     ></product-item>
+    <router-link to="/carts">Cart 페이지로 이동</router-link>
   </div>
 </template>
 
@@ -33,6 +36,15 @@ export default {
     return {
       products: Products,
     };
+  },
+  methods: {
+    onAddCartItem(product) {
+      this.$store.commit('ADD_ITEM', product);
+    },
+    onClickCartItem(product) {
+      const name = product.name;
+      window.alert(`${name} 클릭!`);
+    },
   },
 };
 </script>
