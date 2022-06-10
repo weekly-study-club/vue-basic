@@ -44,11 +44,14 @@ export default {
     },
   },
   watch: {
-    data: {
-      deep: true,
-      handler(data) {
-        window.alert(`배열 데이터가 ${data.length}개로 변경 되었습니다.`);
-      }
+    // data: {
+    //   deep: true,
+    //   handler(data) {
+    //     window.alert(`배열 데이터가 ${data.length}개로 변경 되었습니다.`);
+    //   }
+    // },
+    dataCount(count) {
+      window.alert(`배열 데이터가 ${count}개로 변경 되었습니다.`);
     },
   },
   methods: {
